@@ -7,7 +7,7 @@ class FunctionMetadata:
     def __init__(self, func):
         """ Initialize the metadata """
         args, varargs, keywords, defaults = inspect.getargspec(func)
-        print(defaults)
+        
         self.argNameToIndex = {arg:args.index(arg) for arg in args}
         self.nameToDefaultValue = dict(zip(reversed(args), reversed(defaults))) if defaults is not None else {}
         
